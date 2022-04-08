@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ZERO-SUM: RPS</title>
+        <link rel="stylesheet" href="./styles.css">
+        <!-- <script defer src="./scripts.js"></script> -->
+    </head>
+    <body>
+        <header class="container">
+            <div class="logo">
+                <div class="logo__img">
+                    <img src="imgs/rock.jpg">
+                </div>
+                <div class="logo__text">
+                    <h1>ゼロサム：RPS</h1>
+                    <h4>「ZERO-SUM: Rock Paper Scissors」</h4>
+                </div>
+            </div>
+        </header>
+        <section class="game container">
+            <div class="game__settings">
+                <form class="game__settings__form">
+                    <label class="game__settings__form__label"  for="r1">1</label>
+                    <input class="game__settings__form__radio" type="radio" id="r1" name="rounds" value="1">
+                    <label class="game__settings__form__label" for="r3">3</label>
+                    <input class="game__settings__form__radio" type="radio" id="r3" name="rounds" value="3">
+                    <label class="game__settings__form__label" for="r5">5</label>
+                    <input class="game__settings__form__radio" type="radio" id="r5" name="rounds" value="5">
+                    <input class="game__settings__form__submit"type="submit" value="▶">
+                </form>
+            </div>
+            <div class="game__main">
+                <div class="game__main__controls-container">
+                    <div class="game__main__controls-container__keys">
+                        <button class="game__main__controls-container__keys__button">👊</button>
+                        <button class="game__main__controls-container__keys__button">✋</button>
+                        <button class="game__main__controls-container__keys__button">✌</button>
+                    </div>
+                    <div class="game__main__controls-container__info">
+                        <div class="game__main__controls-container__info__title">Keyboard shortcuts</div>
+                        <div class="game__main__controls-container__info__key">👊: A</div>
+                        <div class="game__main__controls-container__info__key">✋: W</div>
+                        <div class="game__main__controls-container__info__key">✌: D</div>
+                    </div> 
+                </div>
+                <div class="game__main__results-container">
+                    <div class="game__main__results-container__animations">
+                        <div class="game__main__results-container__animations__left">
+                            <div class="game__main__results-container__animations__left__usr">✋</div>    
+                        </div>
+                        <div class="game__main__results-container__animations__right">
+                            <div class="game__main__results-container__animations__right__cpu">👊</div>
+                        </div>
+                    </div>
+                    <div class="game__main__results-container__results">
+                        <div class="game__main__results-container__results__top">
+                            <p class="game__main__results-container__results__top__title">Results</p>
+                        </div>
+                        <div class="game__main__results-container__results__bottom">
+                            <div class="game__main__results-container__results__usr">
+                                <p class="game__main__results-container__results__usr__name">You</p>
+                                <p class="game__main__results-container__results__usr__score">1</p>
+                            </div>
+                            <div class="game__main__results-container__results__cpu">
+                                <p class="game__main__results-container__results__cpu__name">CPU</p>
+                                <p class="game__main__results-container__results__usr__score">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="game__reset-container">
+                <button class="game__reset-container__button">⟳</button>
+            </div>
+        </section>
+        <footer class="credits">
+            <p>made by herlnd &#128511;</p>
+        </footer>
+    </body>
+</html>
