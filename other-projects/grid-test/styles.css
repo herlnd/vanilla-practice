@@ -88,7 +88,7 @@ body {
 .card--spike {
     background-color: #0A75B5;
     color: #fff;
-    background-image: url(/imgs/swordfish.svg);
+    background-image: url(imgs/swordfish.svg);
     background-repeat: no-repeat;
     background-position: -120px 60px;
 }
@@ -96,7 +96,7 @@ body {
 .card--jet {
     background-color: #00A169;
     color: #fff;
-    background-image: url(/imgs/bebop.svg);
+    background-image: url(imgs/bebop.svg);
     background-repeat: no-repeat;
     background-position: -40px 30px;
 }
@@ -104,7 +104,7 @@ body {
 .card--faye {
     background-color: #d33237;
     color: #fff;
-    background-image: url(/imgs/retdtail.svg);
+    background-image: url(imgs/retdtail.svg);
     background-repeat: no-repeat;
     background-size: 35%;
     background-position: bottom 20px right 20px;
@@ -159,7 +159,7 @@ body {
 .card--ein {
     background-color: #181818;
     color: #fff;
-    background-image: url(/imgs/redtail.svg);
+    background-image: url(imgs/redtail.svg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
