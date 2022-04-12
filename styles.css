@@ -78,6 +78,10 @@ body {
     justify-content: center;
 }
 
+.footer a {
+    color: #BABBBD;
+}
+
 @media(max-width: 768px) {
     .projects-container {
         grid-template-columns: 1fr;
