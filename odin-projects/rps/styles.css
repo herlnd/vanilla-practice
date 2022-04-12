@@ -36,7 +36,7 @@ header {
 }
 
 .logo__img {
-    flex-basis: 8%;
+    flex-basis: 16%;
     display: flex;
     justify-content: center;
     align-items: center;
