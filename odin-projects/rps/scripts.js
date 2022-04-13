@@ -109,5 +109,3 @@ function rpaGame() {
 };
 
 console.log(rpaGame());
-
-

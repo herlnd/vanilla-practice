@@ -1,81 +1,67 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>JS Test: RPS</title>
-        <link rel="stylesheet" href="./styles.css">
-        <!-- <script defer src="./scripts.js"></script> -->
-    </head>
-    <body>
-        <header class="container">
-            <div class="logo">
-                <div class="logo__img">
-                    <img src="imgs/rock.jpg">
-                </div>
-                <div class="logo__text">
-                    <h1>ゼロサム: RPS</h1>
-                    <h4>「ZERO-SUM: Rock Paper Scissors」</h4>
-                </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Zero-Sum: RPS</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo__img"></div>
+            <h1 class="logo__title">ゼロサム: RPS</h1>
+            <h3 class="logo__subtitle">「ZERO-SUM: Rock Paper Scissors」</h3>
+        </div>
+    </header>
+    <main class="game">
+        <div class="game__rounds-selector">
+            <p class="game__rounds-selector__title">Select rounds number:</p>
+            <div class="game__rounds-selector__rounds">
+                <label for="1">1</label>
+                <input type="radio" class="game__rounds-selector__rounds__radio-btn"name="round-selector" id="one-round">   
             </div>
-        </header>
-        <section class="game container">
-            <div class="game__settings">
-                <form class="game__settings__form">
-                    <label class="game__settings__form__label"  for="r1">1</label>
-                    <input class="game__settings__form__radio" type="radio" id="r1" name="rounds" value="1">
-                    <label class="game__settings__form__label" for="r3">3</label>
-                    <input class="game__settings__form__radio" type="radio" id="r3" name="rounds" value="3">
-                    <label class="game__settings__form__label" for="r5">5</label>
-                    <input class="game__settings__form__radio" type="radio" id="r5" name="rounds" value="5">
-                    <input class="game__settings__form__submit"type="submit" value="▶">
-                </form>
+            <div class="game__rounds-selector__rounds">
+                <label for="3">3</label>
+                <input type="radio" class="game__rounds-selector__rounds__radio-btn" name="round-selector" id="three-rounds">
             </div>
-            <div class="game__main">
-                <div class="game__main__controls-container">
-                    <div class="game__main__controls-container__keys">
-                        <button class="game__main__controls-container__keys__button">👊</button>
-                        <button class="game__main__controls-container__keys__button">✋</button>
-                        <button class="game__main__controls-container__keys__button">✌</button>
-                    </div>
-                    <div class="game__main__controls-container__info">
-                        <div class="game__main__controls-container__info__title">Keyboard shortcuts</div>
-                        <div class="game__main__controls-container__info__key">👊: A</div>
-                        <div class="game__main__controls-container__info__key">✋: W</div>
-                        <div class="game__main__controls-container__info__key">✌: D</div>
-                    </div> 
-                </div>
-                <div class="game__main__results-container">
-                    <div class="game__main__results-container__animations">
-                        <div class="game__main__results-container__animations__left">
-                            <div class="game__main__results-container__animations__left__usr">✋</div>    
-                        </div>
-                        <div class="game__main__results-container__animations__right">
-                            <div class="game__main__results-container__animations__right__cpu">👊</div>
-                        </div>
-                    </div>
-                    <div class="game__main__results-container__results">
-                        <div class="game__main__results-container__results__top">
-                            <p class="game__main__results-container__results__top__title">Results</p>
-                        </div>
-                        <div class="game__main__results-container__results__bottom">
-                            <div class="game__main__results-container__results__usr">
-                                <p class="game__main__results-container__results__usr__name">You</p>
-                                <p class="game__main__results-container__results__usr__score">1</p>
-                            </div>
-                            <div class="game__main__results-container__results__cpu">
-                                <p class="game__main__results-container__results__cpu__name">CPU</p>
-                                <p class="game__main__results-container__results__usr__score">0</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="game__rounds-selector__rounds">
+                <label for="5">5</label>
+                <input type="radio" class="game__rounds-selector__rounds__radio-btn" name="round-selector" id="five-rounds">
             </div>
-            <div class="game__reset-container">
-                <button class="game__reset-container__button">⟳</button>
+            <button type="submit" class="game__rounds-selector__btn">▶</button>
+            <button type="reset" class="game__rounds-selector__btn">⟳</button>
+        </div>
+        <div class="game__controls">
+            <button class="game__controls__element" id="rock">👊</button>
+            <button class="game__controls__element" id="paper">✋</button>
+            <button class="game__controls__element" id="scissors">✌</button>
+        </div>
+        <div class="game__instructions">
+            <p class="game__instructions__title">Keyboard shortcuts</p>
+            <div class="game__instructions__element">👊: A</div>
+            <div class="game__instructions__element">✋: W</div>
+            <div class="game__instructions__element">✌: D</div>
+        </div>
+        <div class="game__animations">
+            <div class="game__animations__player">
+                <div class="game__animations__player__name">You</div>
+                <div class="game__animations__player__choice" id="usr-animation">👊</div>
             </div>
-        </section>
-        <footer class="credits">
-            <p>made by herlnd &#128511;</p>
-        </footer>
-    </body>
+            <div class="game__animations__player">
+                <div class="game__animations__player__name">CPU</div>
+                <div class="game__animations__player__choice" id="cpu-animation">👊</div>
+            </div>
+        </div>
+        <div class="game__results">
+            <p class="game__results__title">Score</p>
+            <div class="game__results__usr" id="usr-results">1</div>
+            <div class="game__results__cpu" id="cpu-results">1</div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>made by herlnd &#128511;</p>
+    </footer>
+</body>
 </html>

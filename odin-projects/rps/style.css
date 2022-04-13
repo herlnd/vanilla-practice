@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800;900&family=Rampart+One&display=swap');
+
+/* font-family: 'Prompt', sans-serif;
+font-family: 'Rampart One', cursive; */
+
+* {
+    font-family: 'Prompt', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #C24F52;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    background-color: #C24F52;
+    padding: 10px 100px;;
+}
+
+.logo__title {
+    font-family: 'Rampart One', sans-serif;
+    color: #0F1523;
+}
+
+.logo__subtitle {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 800;
+    color: #0F1523;
+}
+
+.game {
+    background-color: #0F1523;
+    max-width: 1440px;
+    margin: 40px 100px;
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.25fr 1fr 0.5fr;
+    gap: 20px;
+}
+
+.game__rounds-selector {
+    padding: 20px;
+    background-color: white;
+    grid-column: 1 / 5;
+    grid-row: 1;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.game__rounds-selector__title,
+.game__rounds-selector__rounds,
+.game__rounds-selector__btn {
+    font-weight: 700;
+}
+
+.game__rounds-selector__rounds {
+    border: 2px solid #0F1523;
+    width: 60px;
+    height: 35px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.game__rounds-selector__btn {
+    border: 2px solid #0F1523;
+    border-radius: 8px;
+    width: 60px;
+    height: 35px;
+    padding: 5px 15px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.game__rounds-selector__btn:hover {
+    color: white;
+    background-color: #0F1523;
+    cursor: pointer;
+}
+
+.game__controls {
+    padding: 20px;
+    background-color: white;
+    grid-column: 1 / 3;
+    grid-row: 2;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.game__controls__element {
+    height: 120px;
+    width: 120px;
+    border: 2px solid #0F1523;
+    border-radius: 50%;
+    background-color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.game__controls__element:hover {
+    background-color: #0F1523;
+}
+
+#rock {
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+#paper {
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+#scissors {
+    grid-column: 3 / 4;
+    grid-row: 2;
+}
+
+.game__instructions {
+    padding: 20px;
+    background-color: white;
+    grid-column: 1 / 3;
+    grid-row: 3;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.game__instructions__title {
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.game__animations {
+    padding: 20px;
+    background-color: white;
+    grid-column: 3 / 5;
+    grid-row: 2;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game__animations__player__name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.game__animations__player__choice {
+    font-size: 100px;
+}
+
+.game__results {
+    padding: 20px;
+    background-color: white;
+    grid-column: 3 / 5;
+    grid-row: 3;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}   
+
+.game__results__title,
+.game__results__usr,
+.game__results__cpu {
+    font-weight: 900;
+    text-align: center;
+    font-size: 40px;
+}
+
+.game__results__title {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.game__results__usr {
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+.game__results__cpu {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+.footer {
+    height: 60px;
+    background-color: #C24F52;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    font-weight: 600;
+    color: #0F1523;
+}
