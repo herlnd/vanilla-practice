@@ -86,6 +86,9 @@ body {
     cursor: pointer;
 }
 
+#restart-button {
+}
+
 .game__rounds-selector__btn:hover {
     color: white;
     background-color: #0F1523;
@@ -105,7 +108,7 @@ body {
     justify-items: center;
 }
 
-.game__controls__element {
+.game__controls__choices {
     height: 120px;
     width: 120px;
     border: 2px solid #0F1523;
@@ -115,7 +118,19 @@ body {
     cursor: pointer;
 }
 
-.game__controls__element:hover {
+#rock { 
+    transform: rotate(90deg) perspective(0) scaleX(-1);
+}
+
+#paper {
+    transform: rotate(-90deg) perspective(0);
+}
+
+#scissors {
+    transform: rotate(-90deg) perspective(0);
+}
+
+.game__controls__choices:hover {
     background-color: #0F1523;
 }
 
@@ -184,8 +199,7 @@ body {
 }   
 
 .game__results__title,
-.game__results__usr,
-.game__results__cpu {
+.game__results__score {
     font-weight: 900;
     text-align: center;
     font-size: 40px;
@@ -198,12 +212,12 @@ body {
     font-size: 30px;
 }
 
-.game__results__usr {
+#usr-results {
     grid-column: 1 / 2;
     grid-row: 2;
 }
 
-.game__results__cpu {
+#cpu-results {
     grid-column: 2 / 3;
     grid-row: 2;
 }

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
     <title>Zero-Sum: RPS</title>
 </head>
 <body>
@@ -30,34 +31,34 @@
                 <label for="5">5</label>
                 <input type="radio" class="game__rounds-selector__rounds__radio-btn" name="round-selector" id="five-rounds">
             </div>
-            <button type="submit" class="game__rounds-selector__btn">▶</button>
-            <button type="reset" class="game__rounds-selector__btn">⟳</button>
+            <button type="submit" class="game__rounds-selector__btn" id="play-button">▶</button>
+            <button type="reset" class="game__rounds-selector__btn" id="restart-button">⟳</button>
         </div>
         <div class="game__controls">
-            <button class="game__controls__element" id="rock">👊</button>
-            <button class="game__controls__element" id="paper">✋</button>
-            <button class="game__controls__element" id="scissors">✌</button>
+            <button class="game__controls__choices" id="rock">🤜</button>
+            <button class="game__controls__choices" id="paper">✋</button>
+            <button class="game__controls__choices" id="scissors">✌</button>
         </div>
         <div class="game__instructions">
             <p class="game__instructions__title">Keyboard shortcuts</p>
-            <div class="game__instructions__element">👊: A</div>
+            <div class="game__instructions__element">🤜: A</div>
             <div class="game__instructions__element">✋: W</div>
             <div class="game__instructions__element">✌: D</div>
         </div>
         <div class="game__animations">
             <div class="game__animations__player">
                 <div class="game__animations__player__name">You</div>
-                <div class="game__animations__player__choice" id="usr-animation">👊</div>
+                <div class="game__animations__player__choice" id="usr-animation">❓</div>
             </div>
             <div class="game__animations__player">
                 <div class="game__animations__player__name">CPU</div>
-                <div class="game__animations__player__choice" id="cpu-animation">👊</div>
+                <div class="game__animations__player__choice" id="cpu-animation">❓</div>
             </div>
         </div>
         <div class="game__results">
             <p class="game__results__title">Score</p>
-            <div class="game__results__usr" id="usr-results">1</div>
-            <div class="game__results__cpu" id="cpu-results">1</div>
+            <div class="game__results__score" id="usr-results">0</div>
+            <div class="game__results__score" id="cpu-results">0</div>
         </div>
     </main>
     <footer class="footer">
