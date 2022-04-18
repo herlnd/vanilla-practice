@@ -34,7 +34,7 @@ body {
 .game {
     background-color: #0F1523;
     max-width: 1440px;
-    margin: 40px 100px;
+    margin: 20px 100px;
     padding: 20px;
     border-radius: 10px;
     display: grid;
@@ -253,7 +253,7 @@ body {
 
 .footer {
     background-color: #C24F52;
-    padding: 10px 0 40px 0;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,4 +262,37 @@ body {
 .footer p {
     font-weight: 600;
     color: #0F1523;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #0F1523;
+}
+
+@media(max-width: 768px) {
+
+    .game__rounds-selector {
+        grid-column: 1;
+        grid-row: 1; 
+    }
+
+    .game__controls {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .game__animations {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .game__score {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .game__instructions {
+        grid-column: 1;
+        grid-row: 5;
+    }
 }

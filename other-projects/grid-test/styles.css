@@ -198,10 +198,15 @@ footer {
     justify-content: space-around;
 }
 
-footer p {
+.footer p {
     color: #edf2f8;
     font-size: 15px;
     font-weight: bold;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #edf2f8;
 }
 
 @media(max-width: 768px) {
