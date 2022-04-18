@@ -27,47 +27,47 @@ function cpuPlay(arr) {
     return cpuChoice;
 }
 
-// rpaRound: Plays a round of RPA and returns the winner.
-function rpaRound() {
+// rpsRound: Plays a round of RPS and returns the winner.
+function rpsRound() {
     let usrResult = usrPlay();
     let cpuResult = cpuPlay(elements);
     let roundWinner;
 
      switch (true) {
          case (usrResult === elements[0] && cpuResult === elements[0]):
-            console.log(`usr: ${usrResult}, cpu: ${cpuResult} result: tie`);
+            console.log(`You chose: ${usrResult}, CPU chose: ${cpuResult} --tie`);
             roundWinner = "none";
             break;
         case (usrResult === elements[0] && cpuResult === elements[1]):
-            console.log(`usr: ${usrResult}, cpu: ${cpuResult} result: cpu wins`);
+            console.log(`You chose: ${usrResult}, CPU chose: ${cpuResult} --CPU wins`);
             roundWinner = "cpu";
             break;
         case (usrResult === elements[0] && cpuResult === elements[2]):
-            console.log(`usr: ${usrResult}, cpu: ${cpuResult} result: user wins`);
+            console.log(`You chose: ${usrResult}, CPU chose: ${cpuResult} --you win`);
             roundWinner = "user";
             break;
         case (usrResult === elements[1] && cpuResult === elements[0]):
-            console.log(`usr: ${usrResult}, cpu: ${cpuResult} result: user wins`);
+            console.log(`You chose: ${usrResult}, CPU chose: ${cpuResult} --you win`);
             roundWinner = "user";
             break;
         case (usrResult === elements[1] && cpuResult === elements[1]):
-            console.log(`usr: ${usrResult}, cpu: ${cpuResult} result: tie`);
+            console.log(`You chose: ${usrResult}, CPU chose: ${cpuResult} --tie`);
             roundWinner = "none";
             break;
         case (usrResult === elements[1] && cpuResult === elements[2]):
-            console.log(`usr: ${usrResult}, cpu: ${cpuResult} result: cpu wins`);
+            console.log(`You chose: ${usrResult}, CPU chose: ${cpuResult} --CPU wins`);
             roundWinner = "cpu";
             break;     
          case (usrResult === elements[2] && cpuResult === elements[0]):
-            console.log(`usr: ${usrResult}, cpu: ${cpuResult} result: cpu wins`);
+            console.log(`You chose: ${usrResult}, CPU chose: ${cpuResult} --CPU wins`);
             roundWinner = "cpu";
             break;
         case (usrResult === elements[2] && cpuResult === elements[1]):
-            console.log(`usr: ${usrResult}, cpu: ${cpuResult} result: user wins`);
+            console.log(`You chose: ${usrResult}, CPU chose: ${cpuResult} --you win`);
             roundWinner = "user";
             break;
         case (usrResult === elements[2] && cpuResult === elements[2]):
-            console.log(`usr: ${usrResult}, cpu: ${cpuResult} result: tie`);
+            console.log(`You chose: ${usrResult}, CPU chose: ${cpuResult} --tie`);
             roundWinner = "none";
             break;           
     };
@@ -75,26 +75,26 @@ function rpaRound() {
     return roundWinner;
 };
 
-// rpaGame: executes the whole game, consisting of the number of rounds setted by the user. The best out of five wins.
-function rpaGame() {
+// rpsGame: executes the whole game, consisting of the number of rounds setted by the user. The best out of five wins.
+function rpsGame() {
     let maxRound = getNumberOfRounds();
     let userCounter = 0;
     let cpuCounter = 0;
     let winner;
       
     while ((userCounter + cpuCounter) < maxRound) {
-        let rpaRoundWinner = rpaRound();
-        switch (rpaRoundWinner) {
+        let rpsRoundWinner = rpsRound();
+        switch (rpsRoundWinner) {
             case "user":
                 userCounter++;
-                console.log(`user score: ${userCounter}, cpu score: ${cpuCounter}`);
+                console.log(`You: ${userCounter}, CPU: ${cpuCounter}`);
                 break;
             case "cpu":
                 cpuCounter++;
-                console.log(`user score: ${userCounter}, cpu score: ${cpuCounter}`);
+                console.log(`You: ${userCounter}, CPU: ${cpuCounter}`);
                 break;
             case "none":
-                console.log(`user score: ${userCounter}, cpu score: ${cpuCounter}`);
+                console.log(`You: ${userCounter}, CPU: ${cpuCounter}`);
                 break;
         };
     };
@@ -105,7 +105,7 @@ function rpaGame() {
         winner = "the cpu won the game";
     }
 
-    console.log(`usr wins: ${userCounter}, cpu wins: ${cpuCounter}. Winner: ${winner}`);
+    console.log(`usr wins: ${userCounter}, cpu wins: ${cpuCounter}. ${winner}`);
 };
 
-console.log(rpaGame());
+console.log(rpsGame());

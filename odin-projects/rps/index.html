@@ -20,16 +20,16 @@
         <div class="game__rounds-selector">
             <p class="game__rounds-selector__title">Select rounds number:</p>
             <div class="game__rounds-selector__rounds">
-                <label for="1">1</label>
-                <input type="radio" class="game__rounds-selector__rounds__radio-btn"name="round-selector" id="one-round">   
+                <label for="one-round">1</label>
+                <input type="radio" class="radio-btns" name="round-selector" id="one-round" value="1">   
             </div>
             <div class="game__rounds-selector__rounds">
-                <label for="3">3</label>
-                <input type="radio" class="game__rounds-selector__rounds__radio-btn" name="round-selector" id="three-rounds">
+                <label for="three-rounds">3</label>
+                <input type="radio" class="radio-btns" name="round-selector" id="three-rounds" value="3">
             </div>
             <div class="game__rounds-selector__rounds">
-                <label for="5">5</label>
-                <input type="radio" class="game__rounds-selector__rounds__radio-btn" name="round-selector" id="five-rounds">
+                <label for="five-rounds">5</label>
+                <input type="radio" class="radio-btns" name="round-selector" id="five-rounds" value="5">
             </div>
             <button type="submit" class="game__rounds-selector__btn" id="play-button">▶</button>
             <button type="reset" class="game__rounds-selector__btn" id="restart-button">⟳</button>
@@ -41,9 +41,12 @@
         </div>
         <div class="game__instructions">
             <p class="game__instructions__title">Keyboard shortcuts</p>
-            <div class="game__instructions__element">🤜: A</div>
-            <div class="game__instructions__element">✋: W</div>
-            <div class="game__instructions__element">✌: D</div>
+            <div class="game__instructions__elements" id="rock-instructions">🤜</div>
+            <label for="rock-instructions" id="rock-label">- A</label>
+            <div class="game__instructions__elements" id="paper-instructions">✋</div>
+            <label for="rock-instructions" id="paper-label">- W</label>
+            <div class="game__instructions__elements" id="scissors-instructions">✌</div>
+            <label for="rock-instructions" id="scissors-label">- D</label>
         </div>
         <div class="game__animations">
             <div class="game__animations__player">
@@ -55,14 +58,14 @@
                 <div class="game__animations__player__choice" id="cpu-animation">❓</div>
             </div>
         </div>
-        <div class="game__results">
-            <p class="game__results__title">Score</p>
-            <div class="game__results__score" id="usr-results">0</div>
-            <div class="game__results__score" id="cpu-results">0</div>
+        <div class="game__score">
+            <p class="game__score__title">Score</p>
+            <div class="game__score__element" id="usr-score">-</div>
+            <div class="game__score__element" id="cpu-score">-</div>
         </div>
     </main>
     <footer class="footer">
-        <p>made by herlnd &#128511;</p>
+        <p>made by <a href="https://github.com/herlnd">herlnd</a> &#128511;</p>
     </footer>
 </body>
 </html>
