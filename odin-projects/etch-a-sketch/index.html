@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Quick Pixel</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <h1>Quick Pixel</h1>
+    </header>
+    <!-- settings -->
+    <div class="slider-container">
+        <input class="slider" id="grid-size-slider" type="range" min="2" max="64" step="2" value="16">
+        <p>Grid size: <span id="grid-size"></span></p>
+    </div>
+    <!-- sketch zone -->
+    <main class="main">
+        <div class="grid" id="grid"></div>
+    </main>
+    <!-- footer -->
+</body>
+</html>
