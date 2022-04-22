@@ -9,19 +9,32 @@
     <title>Quick Pixel</title>
 </head>
 <body>
-    <!-- header -->
-    <header class="header">
-        <h1>Quick Pixel</h1>
-    </header>
-    <!-- settings -->
-    <div class="slider-container">
-        <input class="slider" id="grid-size-slider" type="range" min="8" max="64" step="8" value="24">
-        <p>Grid size: <span id="grid-size"></span></p>
-    </div>
-    <!-- sketch zone -->
-    <main class="main">
-        <div class="grid" id="grid"></div>
+    <!--main  -->
+    <main class="main-container">
+        <!-- sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+            <h1>Quick Pixel</h1>
+            </div>
+        <!-- settings -->
+            <div class="slider-container">
+                <input class="slider" id="grid-size-slider" type="range" min="8" max="64" step="8" value="24">
+                <p>Grid size: <span id="grid-size"></span></p>
+            </div>
+            <div class="color-picker">
+                <p>Color selector</p>
+                <input class="color-picker__button" type="color" >
+            </div>
+
+        </aside>
+        <!-- sketch zone -->
+        <section class="sketch">
+            <div class="grid" id="grid"></div>
+        </section>
     </main>
     <!-- footer -->
+    <footer class="footer">
+        <p>made by herlnd</p>
+    </footer>
 </body>
 </html>
