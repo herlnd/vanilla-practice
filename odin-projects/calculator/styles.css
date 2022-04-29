@@ -1,3 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap');
+
 * {
-    font-family: sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.calculator {
+    border-radius: 10px;
+    padding: 2px;
+    background-color: #1F1F1F;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    width: 320px;
+    height: 540px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.results-container {
+    grid-column: 1 / 5;
+    grid-row: 1 / 4;
+    align-items: center;
+    justify-items: right;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.operation {
+    grid-column:  1 / 5;
+    grid-row: 1 / 2;
+    color: #fff;
+    padding-right: 10px;
+}
+
+.result {
+    grid-column:  1 / 5;
+    grid-row: 2 / 4;
+    color: #fff;
+    font-weight: 600;
+    font-size: 40px;
+    padding-right: 10px;
+}
+
+.top-operators {
+    grid-column:  1 / 4;
+    grid-row: 4 / 6;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;  
+}
+
+.numbers-container {
+    grid-column:  1 / 4;
+    grid-row: 6 / 9;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;  
+}
+
+.bottom-operators {
+    grid-column:  1 / 4;
+    grid-row: 9 / 10;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1fr);
+    align-items: center;
+    justify-items: center;   
+}
+
+.left-operators {
+    grid-column:  4 / 5;
+    grid-row: 4 / 10;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+    justify-items: center;        
+}
+
+.number,
+.operator {
+    background-color: #131313;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #1F1F1F;
+}
+
+.number:hover,
+.operator:hover {
+    background-color: #434343;
+}
+
+.number {
+    background-color: #060606;
+    font-weight: bold;
+}
+
+.operator--del,
+.operator--equal {
+    background-color: #31302F;
+}
+
+.operator--equal {
+    border-bottom-right-radius: 10px;
+}
+
+.operator--plus-minus {
+    border-bottom-left-radius: 10px;
 }
