@@ -94,7 +94,8 @@ body {
 }
 
 .number,
-.operator {
+.operator,
+.clear {
     background-color: #131313;
     color: #fff;
     width: 100%;
@@ -103,7 +104,10 @@ body {
 }
 
 .number:hover,
-.operator:hover {
+.operator:hover,
+.clear--del:hover,
+.equal:hover,
+.clear:hover {
     background-color: #434343;
 }
 
@@ -112,9 +116,13 @@ body {
     font-weight: bold;
 }
 
-.operator--del,
-.operator--equal {
+.clear--del,
+.equal {
     background-color: #31302F;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #1F1F1F;
 }
 
 .operator--equal {
