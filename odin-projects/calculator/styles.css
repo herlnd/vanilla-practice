@@ -17,8 +17,8 @@ body {
 
 .calculator {
     border-radius: 10px;
-    padding: 2px;
-    background-color: #1F1F1F;
+    padding: 4px;
+    background-color: #202020;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     width: 320px;
     height: 540px;
@@ -95,40 +95,46 @@ body {
 
 .number,
 .operator,
-.clear {
-    background-color: #131313;
+.clear,
+.decimal,
+.plus-minus {
+    background-color: #323232;
     color: #fff;
     width: 100%;
     height: 100%;
+    border-radius: 6px;
     border: 1px solid #1F1F1F;
 }
 
 .number:hover,
 .operator:hover,
-.clear--del:hover,
-.equal:hover,
-.clear:hover {
+.decimal:hover,
+.clear:hover,
+.plus-minus:hover {
     background-color: #434343;
 }
 
-.number {
-    background-color: #060606;
+.number,
+.decimal,
+.plus-minus {
+    background-color: #3B3B3B;
     font-weight: bold;
 }
 
-.clear--del,
 .equal {
-    background-color: #31302F;
-    color: #fff;
+    background-color: #4CC2FF;
+    color: #3B3B3B;
+    font-size: larger;
+    font-weight: bold;
     width: 100%;
     height: 100%;
     border: 1px solid #1F1F1F;
+    border-radius: 6px;
 }
 
-.operator--equal {
-    border-bottom-right-radius: 10px;
-}
-
-.operator--plus-minus {
-    border-bottom-left-radius: 10px;
+#division,
+#multiplication,
+#substraction,
+#addition {
+    font-size: larger;
 }

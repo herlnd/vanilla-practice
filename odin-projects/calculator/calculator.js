@@ -1,37 +1,147 @@
+// Keyboard elements
 const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
-const operation = document.getElementById('operation');
-const result = document.getElementById('result');
+const decimal = document.getElementById('decimal');
+const plusMinus = document.getElementById('plus-minus');
 const clear = document.getElementById('clear-all');
+const clearEntry = document.getElementById('clear-entry');
 const deleteButton = document.getElementById('delete');
+const equal = document.getElementById('equal');
 
-clear.addEventListener('click', clearAll);
+// Operators array
+let operatorsArr = [];
+operators.forEach(operator => operatorsArr.push(operator.textContent));
+
+// Display elements
+let displayTop = document.getElementById('operation');
+let displayMain = document.getElementById('result');
+
+// Event listeners
 numbers.forEach(number => number.addEventListener('click', showOnDisplay));
-operators.forEach(operator => operator.addEventListener('click', showOnDisplayOp));
+operators.forEach(operator => operator.addEventListener('click', showOnDisplay));
+decimal.addEventListener('click', showOnDisplay);
+clear.addEventListener('click', clearAll);
+clearEntry.addEventListener('click', clearTextContent);
 deleteButton.addEventListener('click', deleteChar);
+plusMinus.addEventListener('click', showOnDisplay);
+equal.addEventListener('click', showOnDisplay);
 
+// Check for operators
+function containsOperator(str) {
+    if (operatorsArr.some(operator => str.indexOf(operator) !== -1)) {
+        return true;
+    } else return false;
+};
+
+function containsDecimal(str) {
+    if (str.indexOf(',') !== -1) {
+        return true;
+    } else return false;
+};
+
+// Equation elements
+let leftHandSide;
+let rightHandSide;
+let operatorSymbol;
+let operationResult;
 
 function deleteChar() {
-    if (result.textContent.length === 1) {
-        result.textContent = '0';
+    if (displayMain.textContent.length === 1) {
+        displayMain.textContent = '0';
     } else {
-        let resultStr = result.textContent;
-        result.textContent = resultStr.substring(0, resultStr.length - 1);
+        let dispStr = displayMain.textContent;
+        displayMain.textContent = dispStr.slice(0, dispStr.length - 1);
     };
 };
 
 function showOnDisplay(e) {
-    if (result.textContent === '0') {
-        result.textContent = '';
-    }
-    result.textContent += e.target.textContent;
+    if (displayMain.textContent === '0' && (e.target.className !== 'operator' &&
+        e.target.id !== 'decimal')) {
+        displayMain.textContent = '';
+    };
+
+    switch (true) {
+        case (e.target.className === 'number'):
+            if (!containsOperator(displayTop.textContent)) {
+                displayMain.textContent += e.target.textContent;
+            };
+            break;
+
+        case (e.target.id === 'decimal'):
+            if (!containsDecimal(displayMain.textContent)) {
+                displayMain.textContent += e.target.textContent;
+            };
+            break;
+
+        case (e.target.id === 'plus-minus'):
+            if (displayMain.textContent.startsWith('-')) {
+                displayMain.textContent = displayMain.textContent.slice(1);
+            } else {
+                displayMain.textContent = `-${displayMain.textContent}`;
+            };
+            break;
+
+        case (e.target.id === 'equal'):
+            console.log('equal');
+            break;
+
+        case (e.target.className === 'operator'):
+            console.log(e.target.textContent);
+            switch (e.target.textContent) {
+                case '%':
+                    leftHandSide = parseFloat(displayMain.textContent.replace(',', '.')); 
+                    operationResult = leftHandSide / 100;
+                    displayMain.textContent = operationResult.toString().replace('.', ',');
+                    leftHandSide = operationResult;
+                    break;
+
+                case '1/x':
+                    if (parseFloat(displayMain.textContent.replace(',', '.')) !== 0) {
+                        leftHandSide = parseFloat(displayMain.textContent.replace(',', '.')); 
+                        operationResult = 1 / leftHandSide;
+                        displayMain.textContent = operationResult.toString().replace('.', ',');
+                        leftHandSide = operationResult;
+                    } else {
+                        alert('nope')
+                    }
+                    break;
+
+                case 'x²':
+                    leftHandSide = parseFloat(displayMain.textContent.replace(',', '.'));
+                    operationResult = leftHandSide ** 2;
+                    displayMain.textContent = operationResult.toString().replace('.', ',');
+                    leftHandSide = operationResult; 
+                    break;
+
+                case '2√x':
+                    if (parseFloat(displayMain.textContent.replace(',', '.')) > 0) {
+                        leftHandSide = parseFloat(displayMain.textContent.replace(',', '.'));
+                        operationResult = leftHandSide ** (1/2);
+                        displayMain.textContent = operationResult.toString().replace('.', ',');
+                        leftHandSide = operationResult; 
+                    } else {
+                        alert('nope');
+                    }
+                    break;
+
+                default:
+                    displayMain.textContent += e.target.textContent;
+                    displayTop.textContent = displayMain.textContent;
+                    displayMain.textContent = displayMain.textContent.slice(0, 
+                    displayMain.textContent.length - e.target.textContent.length);
+                    break;
+            };
+    };
 };
 
-function showOnDisplayOp(e) {
-    result.textContent += e.target.textContent;
-};
-
+// Clears display
 function clearAll() {
-    operation.textContent = '';
-    result.textContent = 0;
+    displayTop.textContent = '';
+    displayMain.textContent = 0;
+    console.clear();
+};
+
+// Clears last entry
+function clearTextContent() {
+    displayMain.textContent = 0;
 };
