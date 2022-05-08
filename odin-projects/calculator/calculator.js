@@ -1,40 +1,24 @@
 const topDisplay = document.getElementById('top-display');
 const mainDisplay = document.getElementById('main-display');
-const clearButtons = document.querySelectorAll('.clear');
-const operators = document.querySelectorAll('.operator');
-const numbers = document.querySelectorAll('.number');
 const plusMinus = document.getElementById('plus-minus');
 const decimal = document.getElementById('decimal');
+const equal = document.getElementById('equal');
 
+// Initial settings.
+let inputExists = false;
+let itemArr = [];
+let historyArr = [];
+
+// Gets and shows content on display.
+const getTopDispContent = () => topDisplay.textContent;
+const getMainDispContent = () => mainDisplay.value;
+const showOnMainDisp = (str) => mainDisplay.value = str;
+const showOnTopDisp = (str) => topDisplay.textContent = str;
+
+// Clear buttons and functions
+const clearButtons = document.querySelectorAll('.clear');
 clearButtons.forEach(button => button.addEventListener('click', clearX));
-numbers.forEach(num => num.addEventListener('click', addNumber));
-operators.forEach(op => op.addEventListener('click', addOperator));
-plusMinus.addEventListener('click', changeSign);
-decimal.addEventListener('click', addDecimal);
 
-// Adds a decimal to the display/input
-function addDecimal() {
-    let disp = getMainDispContent();
-    if (disp.indexOf(',') !== -1) {
-        showOnMainDisp(disp);
-    } else {
-        showOnMainDisp(`${disp},`);
-    };
-};
-
-// Changes the sign of the display/input.
-function changeSign() {
-    let disp = getMainDispContent();
-    if (disp === '0') {
-        showOnMainDisp(disp);
-    } else if (disp.startsWith('-')) {
-        showOnMainDisp(disp.slice(1)); 
-    } else {
-        showOnMainDisp(`-${disp}`);
-    };
-};
-
-// Clear functions.
 function clearX(e) {
     switch (e.target.id) {
         case 'delete':
@@ -53,121 +37,158 @@ function clearX(e) {
         case 'clear-all':
             showOnMainDisp('0');
             showOnTopDisp('');
+            itemArr = [];
+            historyArr = [];
             console.clear();
         break;
     };
 };
 
-// Sets display to default values.
-const setDisplay = (e) => {
-    if (mainDisplay.textContent === '0' && (e.target.className !== 'operator' &&
-    e.target.id !== 'decimal')) {
-    mainDisplay.textContent = '';
-    };
-};
+// Handles number inputs.
+const numbers = document.querySelectorAll('.number');
+numbers.forEach(num => num.addEventListener('click', addNumber));
 
-// Adds numbers to the main display
 function addNumber(e) {
-    setDisplay(e);
-    let disp = getMainDispContent();
-    if (disp.length < 13) {
-        mainDisplay.textContent += e.target.textContent;
-    };
-};
+    let newInput = e.target.textContent;
 
-function addNumber2(e) {
-    setDisplay(e);
-    let disp = getMainDispContent();
-    if (disp.length < 13) {
-        mainDisplay.textContent += 'tato';
-    };
-};
-
-// Equation terms
-let leftHandSide;
-let rightHandSide;
-let result;
-
-// Operators array
-let auxOpArr = [];
-operators.forEach(op => auxOpArr.push(op.textContent));
-let opArr = auxOpArr.filter(operator => operator.length === 1 && operator !== '%');
-
-// Check for operators
-const containsOp = (str) => opArr.some(op => str.indexOf(op) !== -1 ? true : false);
-
-// Get and show content on display.
-const getTopDispContent = () => topDisplay.textContent;
-const getMainDispContent = () => mainDisplay.textContent;
-const showOnMainDisp = (str) => mainDisplay.textContent = str;
-const showOnTopDisp = (str) => topDisplay.textContent = str;
-
-// Adds operator to the top display and saves the previous term in the left-hand side of the equation.
-function addOperator(e) {
-    let disp = getMainDispContent();
-    if (disp === 'overflow' || disp === 'NaN') {
-        leftHandSide = 0;
-    } else  {
-        leftHandSide = parseFloat(disp.replace('.', '').replace(',', '.'));
-    };
-
-    if (containsOp(e.target.textContent)) {
-        showOnTopDisp(`${leftHandSide} ${e.target.textContent}`);
+    if (inputExists) {
+        mainDisplay.value = newInput;
+        inputExists = false;
     } else {
-        let calcObj = calculateOthers(leftHandSide, e.target.id);
-        showOnMainDisp(`${calcObj.result}`);
-        showOnTopDisp(`${calcObj.expression}`);
-    };
-};
-
-// Calculates %, 1/x, pow and sqrt.
-function calculateOthers(leftTerm, operator) {
-    switch (operator) {
-        case 'percentage':
-            result = formatNumber((leftTerm / 100));
-            expression = `${leftTerm}%`;
-            return {result, expression};
-        case 'fraction':
-            leftTerm === 0 ? alert('nope') : result = formatNumber(1 / leftTerm);
-            expression = `1/${leftTerm}`;
-            return {result, expression};
-        case 'pow':
-            result = formatNumber(leftTerm ** 2);
-            expression = `${leftTerm}²`;
-            return {result, expression};
-        case 'sqrt':
-            leftTerm < 0 ? alert('nope') : result = formatNumber((leftTerm ** (1/2)));
-            expression = `2√${leftTerm}`;
-            return {result, expression};
-    };
-};
-
-// Formats numbers to local language representation.
-const formatNumber = (num) => {
-    let expIndex = num.toString().indexOf('e+');
-    if (expIndex !== -1) {
-        formattedNumber = 'overflow';
-    } else if (num.toString().length > 10) {
-        let auxNum = num.toLocaleString('es-AR', {maximumFractionDigits: 2, notation: 'scientific'});
-        let eIndex = auxNum.indexOf('E0');
-        if (eIndex !== -1) {
-            formattedNumber = auxNum.slice(0, eIndex);
+        if (mainDisplay.value === '0') {
+            mainDisplay.value = newInput;
         } else {
-            formattedNumber = auxNum;
-        };
-    } else {
-        formattedNumber = num.toLocaleString('es-AR', {maximumFractionDigits: 2});
+            if (mainDisplay.value.length < 13) {
+                mainDisplay.value = `${mainDisplay.value}${newInput}`;
+            }
+        };  
     };
-
-    return formattedNumber;
 };
 
-// Handles engineering notations.
-function handleNotation(num) {
-    let notationIndex = num.toString().indexOf('E');
-    if (notationIndex !== -1) {
-        return num.toString().replace('E', 'exp');
+// Handles decimals
+decimal.addEventListener('click', addDecimal);
+
+function addDecimal() {
+    let disp = getMainDispContent();
+    if (disp.indexOf(',') !== -1) {
+        showOnMainDisp(disp);
     } else {
-        return num;
+        showOnMainDisp(`${disp},`);
+    };
+};
+
+// Handles sign changes of the display/input.
+plusMinus.addEventListener('click', changeSign);
+
+function changeSign() {
+    let disp = getMainDispContent();
+    if (disp === '0') {
+        showOnMainDisp(disp);
+    } else if (disp.startsWith('-')) {
+        showOnMainDisp(disp.slice(1)); 
+    } else {
+        showOnMainDisp(`-${disp}`);
+    };
+};
+
+// Handles operators.
+const operators = document.querySelectorAll('.operator');
+operators.forEach(op => op.addEventListener('click', addOperator));
+
+function addOperator(e) {
+    // Removes equal sign from top display.
+    if (inputExists) {
+        topDisplay.textContent = '';
+        itemArr = [];
+    }
+
+    let newOperator = e.target.textContent;
+
+    // Prevents null inputs.
+    if (!itemArr.length && mainDisplay.value === '0') return;
+
+    // Prepares the equation.
+    if (!itemArr.length) {
+        itemArr.push(mainDisplay.value, newOperator);
+        topDisplay.textContent = `${mainDisplay.value} ${newOperator}`;
+        return inputExists = true;
+    }
+
+    // Completes the equation.
+    if(itemArr.length) {
+        itemArr.push(mainDisplay.value); // Adds third element to the array.
+        const calcObj = {
+            first: parseFloat(itemArr[0]),
+            op: itemArr[1],
+            second: parseFloat(itemArr[2])
+        };
+
+        historyArr.push(calcObj);
+        let calcResult = calculateBasics(calcObj);
+        mainDisplay.value = calcResult;
+
+        showOnTopDisp(`${calcResult} ${newOperator}`);
+
+        // Starts new equation.
+        itemArr = [calcResult, newOperator];
+        inputExists = true;
+    };
+};
+
+// Calculates all operations.
+function calculateBasics({first, op, second}) {
+
+    switch (op) {
+        case '÷':
+            result = (first / second);
+            return result;
+        case '×':
+            result = (first * second);
+            return result;
+        case '-':
+            result = (first - second);
+            return result;
+        case '+':
+            result = (first + second);
+            return result;
+        case '%':
+            result = (first / 100);
+            return result;
+        case '1/x':
+            first === 0 ? alert('nope') : result = (1 / first);
+            return result;
+        case 'x²':
+            result = (first ** 2);
+            return result;
+        case '2√x':
+            first < 0 ? alert('nope') : result = (first ** (1/2));
+            return result;
+    };
+};
+
+// Handles the equal button.
+equal.addEventListener('click', getResult);
+
+function getResult() {
+    let newCalcObj;
+    if (!itemArr.length) {
+        showOnMainDisp(getMainDispContent());
+    } else {
+        itemArr.push(getMainDispContent());
+
+        newCalcObj = {
+            first: parseFloat(itemArr[0]),
+            op: itemArr[1],
+            second: parseFloat(itemArr[2])
+        }
+
+        let calcResult = calculateBasics(newCalcObj);
+        console.log(calcResult);
+        showOnTopDisp(`${newCalcObj.first} ${newCalcObj.op} ${newCalcObj.second} =`)
+        showOnMainDisp(calcResult);
+        
+        historyArr.push(newCalcObj);
+        inputExists = true;
+        itemArr = [];
     };
 };
