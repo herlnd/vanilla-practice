@@ -133,9 +133,10 @@ function addOperator(e) {
 
 // Calculates all operations.
 function calculateBasics({first, op, second}) {
+    let result;
     switch (op) {
         case '÷':
-            result = (first / second);
+            second === 0 ? enableModal() : result = (first / second);
             return result;
         case '×':
             result = (first * second);
