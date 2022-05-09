@@ -39,7 +39,6 @@ function clearX(e) {
             showOnTopDisp('');
             itemArr = [];
             historyArr = [];
-            console.clear();
         break;
     };
 };
@@ -104,9 +103,6 @@ function addOperator(e) {
 
     let newOperator = e.target.textContent;
 
-    // Prevents null inputs.
-    if (!itemArr.length && mainDisplay.value === '0') return;
-
     // Prepares the equation.
     if (!itemArr.length) {
         itemArr.push(mainDisplay.value, newOperator);
@@ -137,7 +133,6 @@ function addOperator(e) {
 
 // Calculates all operations.
 function calculateBasics({first, op, second}) {
-
     switch (op) {
         case '÷':
             result = (first / second);
@@ -155,13 +150,13 @@ function calculateBasics({first, op, second}) {
             result = (first / 100);
             return result;
         case '1/x':
-            first === 0 ? alert('nope') : result = (1 / first);
+            first === 0 ? enableModal() : result = (1 / first);
             return result;
         case 'x²':
             result = (first ** 2);
             return result;
         case '2√x':
-            first < 0 ? alert('nope') : result = (first ** (1/2));
+            first < 0 ? enableModal() : result = (first ** (1/2));
             return result;
     };
 };
@@ -183,7 +178,6 @@ function getResult() {
         }
 
         let calcResult = calculateBasics(newCalcObj);
-        console.log(calcResult);
         showOnTopDisp(`${newCalcObj.first} ${newCalcObj.op} ${newCalcObj.second} =`)
         showOnMainDisp(calcResult);
         
@@ -191,4 +185,33 @@ function getResult() {
         inputExists = true;
         itemArr = [];
     };
+};
+
+// enableModal
+function enableModal() {
+    const modal = document.createElement('section');
+    const modalImg = document.createElement('img');
+    modal.classList.add('modal');
+    modalImg.src = './imgs/zerodivision.gif';
+    modalImg.classList.add('modal');
+    modalImg.classList.add('img');
+    modal.appendChild(modalImg);
+
+    const modalButton = document.createElement('button');
+    modalButton.innerHTML = 'Sorry 	&#x1F622;';
+    modalButton.classList.add('modal-button');
+    modalButton.classList.add('modal-button:hover');
+    modalButton.addEventListener('click', disableModal);
+
+    document.querySelector('.calculator').appendChild(modalButton);
+    document.querySelector('.calculator').appendChild(modal);
+};
+
+function disableModal() {
+    const modalButton = document.querySelector('.modal-button');
+    const modal = document.querySelector('.modal');
+
+    document.querySelector('.calculator').removeChild(modalButton);
+    document.querySelector('.calculator').removeChild(modal);
+    document.getElementById('clear-all').click();
 };
