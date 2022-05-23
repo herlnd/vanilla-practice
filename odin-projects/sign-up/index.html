@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imgs/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <title>Sign Up</title>
+</head>
+<body>
+    <main class="layout">
+        <section class="logo">
+            <div class="logo__background">
+                <img class="logo__img" src="./imgs/thumbs-up.svg" alt="logo">
+            </div>
+            <div class="logo__text"><h1>DON'T PANIC</h1></div>
+        </section>
+        <section class="main-container">
+            <div class="sign-up-title">
+                <p class="sign-up-title__text-small">DON'T HAVE AN ACCOUNT?</p>
+                <p class="sign-up-title__text-big">DON'T PANIC</p>
+                <p class="sign-up-title__text-small">SIGN UP TODAY</p>
+            </div>
+
+            <form class="form" action="/" method="GET">
+                <div class="form__input-container">
+                    <label class="form__label" for="first-name">Username *</label>
+                    <input class="form__input" type="text" name="username" id="username" 
+                    placeholder="monkeyman" minlength="4" maxlength="10" required="required">
+                </div>
+
+                <div class="form__input-container">
+                    <label class="form__label" for="last-name">Full Name *</label>
+                    <input class="form__input" type="text" name="name" id="name" 
+                    placeholder="Arthur Dent" minlength="2" maxlength="20" required="required">
+                </div>
+
+                <div class="form__input-container">
+                    <label class="form__label" for="email">Email *</label>
+                    <input class="form__input" type="email" name="email" id="email"
+                    placeholder="arthurdent@gmail.com" required="required">
+                </div>
+
+                <div class="form__input-container">
+                    <label class="form__label" for="phone-number">Phone Number *</label>
+                    <input class="form__input" type="tel" name="phone-number" id="phone-number"
+                    placeholder="555-555-555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
+                </div>
+
+                <div class="form__input-container">
+                    <label class="form__label" for="password">Create a password *</label>
+                    <input class="form__input" type="password" name="password" id="password"
+                    minlength="8" maxlength="12" required="required">
+                </div>
+
+                <div class="form__input-container">
+                    <label class="form__label" for="confirm-password">Confirm your password *</label>
+                    <input class="form__input" type="password" name="confirm-password" id="confirm-password"
+                    required="required">
+                </div>
+
+                <input class="confirm-button"type="submit" id="confirm-button" value="CREATE ACCOUNT">
+
+                <p class="alt-sign-up__title">- or -</p>
+                <div class="alt-sign-up__btn">
+                    <div class="btn_img">
+                        <img src="./imgs/google.svg" alt="">
+                    </div>
+                    <input class="btn_txt" type="submit" value="Sign up with Google">
+                </div>
+                
+
+            </form>
+
+            <section class="login">
+                <p>Already have an account? <a href="#"> Log in</a></p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
