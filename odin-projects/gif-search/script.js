@@ -41,4 +41,3 @@ function getQuery(e) {
         // Crear una función (cambiar texto de selectores) para mostrar errores cuando falla el fetch
         // y devolverlo a su estado de "loading"
 };
-
