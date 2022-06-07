@@ -55,6 +55,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    transition: opacity ease-in-out .5s;
 }
 
 .gif-container {
@@ -77,4 +78,8 @@ body {
 
 .get-gif-button:hover {
     box-shadow: 0px 0px 10px #f4f4f4;
+}
+
+.loader {
+    opacity: 0;
 }
