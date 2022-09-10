@@ -1,47 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <script src="https://kit.fontawesome.com/73d4124b96.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/73d4124b96.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Quick Pixel</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--main  -->
     <main class="main-container">
-        <!-- sidebar -->
-        <aside class="sidebar">
-            <div class="logo-container">
-            <h1>QuickPixel</h1>
-            </div>
+      <!-- sidebar -->
+      <aside class="sidebar">
+        <div class="logo-container">
+          <h1>QuickPixel</h1>
+        </div>
         <!-- settings -->
-            <div class="slider-container">
-                <input class="slider" id="grid-size-slider" type="range" min="8" max="64" step="8" value="24">
-                <p>Grid size: <span id="grid-size"></span></p>
-            </div>
-            <div class="color-picker">
-                <p>Color selector</p>
-                <input class="color-picker__button" id="color-picker-button" type="color" value="#2a2a2a">
-            </div>
-            <div class="drawing-tools">
-                <button class="drawing-tools__button" id="brush-button"><i class="fa-solid fa-paintbrush fa-2xl"></i></button>
-                <button class="drawing-tools__button" id="eraser-button"><i class="fa-solid fa-eraser fa-2xl"></i></button>
-            </div>
-            <div class="clear-grid">
-                <button class="clear-grid__button" id="clear-grid-button"><i class="fa-solid fa-broom fa-2xl"></i></button>
-            </div>
-        </aside>
-        <!-- sketch zone -->
-        <section class="sketch">
-            <div class="grid" id="grid"></div>
-        </section>
+        <div class="slider-container">
+          <input
+            class="slider"
+            id="grid-size-slider"
+            type="range"
+            min="8"
+            max="64"
+            step="8"
+            value="24"
+          />
+          <p>Grid size: <span id="grid-size"></span></p>
+        </div>
+        <div class="color-picker">
+          <p>Color selector</p>
+          <input
+            class="color-picker__button"
+            id="color-picker-button"
+            type="color"
+            value="#2a2a2a"
+          />
+        </div>
+        <div class="drawing-tools">
+          <button class="drawing-tools__button" id="brush-button">
+            <i class="fa-solid fa-paintbrush fa-2xl"></i>
+          </button>
+          <button class="drawing-tools__button" id="eraser-button">
+            <i class="fa-solid fa-eraser fa-2xl"></i>
+          </button>
+        </div>
+        <div class="clear-grid">
+          <button class="clear-grid__button" id="clear-grid-button">
+            <i class="fa-solid fa-broom fa-2xl"></i>
+          </button>
+        </div>
+      </aside>
+      <!-- sketch zone -->
+      <section class="sketch">
+        <div class="grid" id="grid"></div>
+      </section>
     </main>
     <!-- footer -->
     <footer class="footer">
-        <p>made by <a href="https://github.com/herlnd">herlnd</a> &#128511;</p>
+      <p>made by <a href="https://github.com/herlnd">herlnd</a> &#128511;</p>
     </footer>
-</body>
+  </body>
 </html>
