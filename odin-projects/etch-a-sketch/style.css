@@ -1,137 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'roboto', sans-serif;
-    color: #2a2a2a;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "roboto", sans-serif;
+  color: #2a2a2a;
 }
 
 body {
-    min-height: 100vh;
-    background-color: #eff0f3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
+  min-height: 100vh;
+  background-color: #eff0f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .main-container {
-    max-width: 1240px;
-    margin: 20px 100px;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
+  max-width: 1240px;
+  margin: 20px 100px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .sidebar {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    padding: 20px 0;
-    border-radius: 10px;
-    background-color: #fffffe;
-    box-shadow: #2b2a2c26 0px 48px 100px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  padding: 20px 0;
+  border-radius: 10px;
+  background-color: #fffffe;
+  box-shadow: #2b2a2c26 0px 48px 100px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
 }
 
 .logo-container h1 {
-    font-family: 'Press Start 2P', sans-serif;
-    color: #0d0d0d;
+  font-family: "Press Start 2P", sans-serif;
+  color: #0d0d0d;
 }
 
 .slider-container {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
 }
 
 .color-picker {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .color-picker__button {
-    appearance: none;
-    width: 80px;
-    height: 80px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
+  appearance: none;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .color-picker__button::-webkit-color-swatch {
-    border-radius: 50%;
-    border-top-right-radius: 0;
-    transform: rotate(-45deg);
-    border: 4px solid #ff8e3c;
+  border-radius: 50%;
+  border-top-right-radius: 0;
+  transform: rotate(-45deg);
+  border: 4px solid #ff8e3c;
 }
 
 .drawing-tools__button,
 .clear-grid__button {
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    background-color: #eff0f3;
-    border: 2px solid #0d0d0d;
-    border-radius: 6px;   
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background-color: #eff0f3;
+  border: 2px solid #0d0d0d;
+  border-radius: 6px;
 }
 
 .drawing-tools__button:hover,
 .clear-grid__button:hover {
-    background-color: #ff8e3c;
+  background-color: #ff8e3c;
 }
 
 .drawing-tools__button:disabled,
 .clear-grid__button:disabled {
-    background-color: #ff8e3c;
+  background-color: #ff8e3c;
 }
 
 .clear-grid__button {
-    width: 120px;
-    height: 40px;
+  width: 120px;
+  height: 40px;
 }
 
 .sketch {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    padding: 20px 0;
-    border-radius: 10px;
-    background-color: #fffffe;
-    box-shadow: #2b2a2c26 0px 48px 100px 0px;
-    display: flex;
-    justify-content: center;
-
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  padding: 20px 0;
+  border-radius: 10px;
+  background-color: #fffffe;
+  box-shadow: #2b2a2c26 0px 48px 100px 0px;
+  display: flex;
+  justify-content: center;
 }
 
 .grid {
-    width: 500px;
-    height: 500px;
-    border: 2px solid #2b2a2c26;
-    display: grid;
+  width: 500px;
+  height: 500px;
+  border: 2px solid #2b2a2c26;
+  display: grid;
 }
 
 .cell {
-    background-color: #f4f4f4;
-    width: 100%;
-    height: 100%;
-    border: 1px solid #2b2a2c26;
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #2b2a2c26;
 }
 
 .footer {
-    padding-bottom: 20px;
-    display: flex;
-    justify-content: center;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .footer a {
-    text-decoration: none;
+  text-decoration: none;
 }

@@ -1,71 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="./game.js" defer></script>
     <title>Zero-Sum: RPS</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">
-            <div class="logo__img"></div>
-            <h1 class="logo__title">ゼロサム: RPS</h1>
-            <h3 class="logo__subtitle">「ZERO-SUM: Rock Paper Scissors」</h3>
-        </div>
+      <div class="logo">
+        <div class="logo__img"></div>
+        <h1 class="logo__title">ゼロサム: RPS</h1>
+        <h3 class="logo__subtitle">「ZERO-SUM: Rock Paper Scissors」</h3>
+      </div>
     </header>
     <main class="game">
-        <div class="game__rounds-selector">
-            <p class="game__rounds-selector__title">Select rounds number:</p>
-            <div class="game__rounds-selector__rounds">
-                <label for="one-round">1</label>
-                <input type="radio" class="radio-btns" name="round-selector" id="one-round" value="1">   
-            </div>
-            <div class="game__rounds-selector__rounds">
-                <label for="three-rounds">3</label>
-                <input type="radio" class="radio-btns" name="round-selector" id="three-rounds" value="3">
-            </div>
-            <div class="game__rounds-selector__rounds">
-                <label for="five-rounds">5</label>
-                <input type="radio" class="radio-btns" name="round-selector" id="five-rounds" value="5">
-            </div>
-            <button type="submit" class="game__rounds-selector__btn" id="play-button">▶</button>
-            <button type="reset" class="game__rounds-selector__btn" id="restart-button">⟳</button>
+      <div class="game__rounds-selector">
+        <p class="game__rounds-selector__title">Select rounds number:</p>
+        <div class="game__rounds-selector__rounds">
+          <label for="one-round">1</label>
+          <input
+            type="radio"
+            class="radio-btns"
+            name="round-selector"
+            id="one-round"
+            value="1"
+          />
         </div>
-        <div class="game__controls">
-            <button class="game__controls__choices" id="rock">🤜</button>
-            <button class="game__controls__choices" id="paper">✋</button>
-            <button class="game__controls__choices" id="scissors">✌</button>
+        <div class="game__rounds-selector__rounds">
+          <label for="three-rounds">3</label>
+          <input
+            type="radio"
+            class="radio-btns"
+            name="round-selector"
+            id="three-rounds"
+            value="3"
+          />
         </div>
-        <div class="game__instructions">
-            <p class="game__instructions__title">Keyboard shortcuts</p>
-            <div class="game__instructions__elements" id="rock-instructions">🤜</div>
-            <label for="rock-instructions" id="rock-label">- A</label>
-            <div class="game__instructions__elements" id="paper-instructions">✋</div>
-            <label for="rock-instructions" id="paper-label">- W</label>
-            <div class="game__instructions__elements" id="scissors-instructions">✌</div>
-            <label for="rock-instructions" id="scissors-label">- D</label>
+        <div class="game__rounds-selector__rounds">
+          <label for="five-rounds">5</label>
+          <input
+            type="radio"
+            class="radio-btns"
+            name="round-selector"
+            id="five-rounds"
+            value="5"
+          />
         </div>
-        <div class="game__animations">
-            <div class="game__animations__player">
-                <div class="game__animations__player__name">You</div>
-                <div class="game__animations__player__choice" id="usr-animation">❓</div>
-            </div>
-            <div class="game__animations__player">
-                <div class="game__animations__player__name">CPU</div>
-                <div class="game__animations__player__choice" id="cpu-animation">❓</div>
-            </div>
+        <button
+          type="submit"
+          class="game__rounds-selector__btn"
+          id="play-button"
+        >
+          ▶
+        </button>
+        <button
+          type="reset"
+          class="game__rounds-selector__btn"
+          id="restart-button"
+        >
+          ⟳
+        </button>
+      </div>
+      <div class="game__controls">
+        <button class="game__controls__choices" id="rock">🤜</button>
+        <button class="game__controls__choices" id="paper">✋</button>
+        <button class="game__controls__choices" id="scissors">✌</button>
+      </div>
+      <div class="game__instructions">
+        <p class="game__instructions__title">Keyboard shortcuts</p>
+        <div class="game__instructions__elements" id="rock-instructions">
+          🤜
         </div>
-        <div class="game__score">
-            <p class="game__score__title">Score</p>
-            <div class="game__score__element" id="usr-score">-</div>
-            <div class="game__score__element" id="cpu-score">-</div>
+        <label for="rock-instructions" id="rock-label">- A</label>
+        <div class="game__instructions__elements" id="paper-instructions">
+          ✋
         </div>
+        <label for="rock-instructions" id="paper-label">- W</label>
+        <div class="game__instructions__elements" id="scissors-instructions">
+          ✌
+        </div>
+        <label for="rock-instructions" id="scissors-label">- D</label>
+      </div>
+      <div class="game__animations">
+        <div class="game__animations__player">
+          <div class="game__animations__player__name">You</div>
+          <div class="game__animations__player__choice" id="usr-animation">
+            ❓
+          </div>
+        </div>
+        <div class="game__animations__player">
+          <div class="game__animations__player__name">CPU</div>
+          <div class="game__animations__player__choice" id="cpu-animation">
+            ❓
+          </div>
+        </div>
+      </div>
+      <div class="game__score">
+        <p class="game__score__title">Score</p>
+        <div class="game__score__element" id="usr-score">-</div>
+        <div class="game__score__element" id="cpu-score">-</div>
+      </div>
     </main>
     <footer class="footer">
-        <p>made by <a href="https://github.com/herlnd">herlnd</a> &#128511;</p>
+      <p>made by <a href="https://github.com/herlnd">herlnd</a> &#128511;</p>
     </footer>
-</body>
+  </body>
 </html>

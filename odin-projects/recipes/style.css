@@ -1,57 +1,58 @@
 * {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    background-color: #F7F4A7;
+  background-color: #f7f4a7;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
-  color: #E71E4A;
+  color: #e71e4a;
 }
 
 img {
-    width: 400px; 
-    height: auto;
-    margin: auto;
-    display: block;
-    border-radius: 20px;
+  width: 400px;
+  height: auto;
+  margin: auto;
+  display: block;
+  border-radius: 20px;
 }
 
 nav {
-    display: flex;
+  display: flex;
 }
 
 .nav-elem {
-    flex: 1;
-    width: 300px;
-    height: 60px;
-    background-color: green;
-    text-align: center;
-    border-radius: 12px;
-    margin: 20px
+  flex: 1;
+  width: 300px;
+  height: 60px;
+  background-color: green;
+  text-align: center;
+  border-radius: 12px;
+  margin: 20px;
 }
 
 a {
-    color:#F7F4A7;
-    text-decoration: none;
+  color: #f7f4a7;
+  text-decoration: none;
 }
 
 footer {
-background-color: #E71E4A;
-padding: 20px;
-color: #F7F4A7;
-border-radius: 20px;
-text-align: center;
-margin: 20px;
+  background-color: #e71e4a;
+  padding: 20px;
+  color: #f7f4a7;
+  border-radius: 20px;
+  text-align: center;
+  margin: 20px;
 }
 
 /* Other pages */
 
 .Return-Home {
-    font-family: Verdana, sans-serif;
-    font-size: medium;
-    font-weight: bold;
-    text-align: center;
+  font-family: Verdana, sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
 }

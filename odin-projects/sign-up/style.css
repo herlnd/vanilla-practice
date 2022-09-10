@@ -1,181 +1,182 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,1000&display=swap");
 
 :root {
-    --white: #f2f2f2;
-    --black: #2a2a2a;
-    --height: 100vh;
-    --title-font: 1000 italic 1rem 'Roboto Flex', sans-serif;
-    --content-font: 400 0.95rem 'Roboto Flex', sans-serif;
+  --white: #f2f2f2;
+  --black: #2a2a2a;
+  --height: 100vh;
+  --title-font: 1000 italic 1rem "Roboto Flex", sans-serif;
+  --content-font: 400 0.95rem "Roboto Flex", sans-serif;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .layout {
-    height: var(--heigth);
-    width: 100%;
-    height: 100vh;
-    background-image: url(./imgs/earth-night.jpg);
-    background-size: cover;
-    display: grid;
-    grid-template-columns: 1.5fr 2.5fr 0.5fr;
+  height: var(--heigth);
+  width: 100%;
+  height: 100vh;
+  background-image: url(./imgs/earth-night.jpg);
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr 0.5fr;
 }
 
 .logo {
-    grid-column: 1 / 2;
-    width: 100%;
-    height: var(--height);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
+  grid-column: 1 / 2;
+  width: 100%;
+  height: var(--height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
 }
 
 .logo__background {
-    width: 50%;
-    height: auto;
-    border-radius: 50%;
-    background-color: var(--black);
-    opacity: 0.3;
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  background-color: var(--black);
+  opacity: 0.3;
 }
 
 .logo__img {
-    opacity: 0.9;
-    filter: invert(100%) sepia(2%) saturate(7500%) hue-rotate(116deg) brightness(121%) contrast(91%);
+  opacity: 0.9;
+  filter: invert(100%) sepia(2%) saturate(7500%) hue-rotate(116deg)
+    brightness(121%) contrast(91%);
 }
 
 .logo__text {
-    color: var(--white);
-    font: var(--title-font);
-    font-size: 2rem;
+  color: var(--white);
+  font: var(--title-font);
+  font-size: 2rem;
 }
 
 .main-container {
-    grid-column: 2 / 3;
-    height: var(--height);
-    width: 100%;
-    background-color: var(--black);
-    opacity: 0.95;
-    display: grid;
-    grid-template-rows: 1.75fr 3fr 0.25fr;
-    padding: 2.5% 5%;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    font: var(--content-font);
+  grid-column: 2 / 3;
+  height: var(--height);
+  width: 100%;
+  background-color: var(--black);
+  opacity: 0.95;
+  display: grid;
+  grid-template-rows: 1.75fr 3fr 0.25fr;
+  padding: 2.5% 5%;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font: var(--content-font);
 }
 
 .sign-up-title__text-small,
 .sign-up-title__text-big {
-    font: var(--title-font);
-    font-size: 3rem;
-    line-height: 0.8;
+  font: var(--title-font);
+  font-size: 3rem;
+  line-height: 0.8;
 }
 
 .sign-up-title__text-big {
-    font: var(--title-font);
-    font-size: 6rem;
+  font: var(--title-font);
+  font-size: 6rem;
 }
 
 .form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr) 0.5fr 1fr 1fr 1.5fr;
-    gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr) 0.5fr 1fr 1fr 1.5fr;
+  gap: 0.5rem;
 }
 
 .form__input-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .form__label {
-    font: var(--content-font);
+  font: var(--content-font);
 }
 
 .form__input {
-    height: 1.8rem;
-    border: none;
-    background-color: #f2f2f2;
-    color: #2a2a2a;
-    padding-left: 1rem;
+  height: 1.8rem;
+  border: none;
+  background-color: #f2f2f2;
+  color: #2a2a2a;
+  padding-left: 1rem;
 }
 
 .confirm-button,
 .alt-sign-up__btn {
-    grid-column: 1 / 3;
-    justify-self: center;
-    width: 25%;
+  grid-column: 1 / 3;
+  justify-self: center;
+  width: 25%;
 }
 
 .confirm-button {
-    grid-row: 5 / 6;
-    font: var(--title-font);
-    background-color: transparent;
-    border: 2px solid #f2f2f2;
-    color: #f2f2f2;
-    cursor: pointer;
+  grid-row: 5 / 6;
+  font: var(--title-font);
+  background-color: transparent;
+  border: 2px solid #f2f2f2;
+  color: #f2f2f2;
+  cursor: pointer;
 }
 
 .confirm-button:hover {
-    background-color: #f2f2f2;
-    color: #2a2a2a;
-    border: none;
-    outline: none;
+  background-color: #f2f2f2;
+  color: #2a2a2a;
+  border: none;
+  outline: none;
 }
 
 .alt-sign-up__title {
-    grid-row: 6 / 7;
-    grid-column: 1 / 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  grid-row: 6 / 7;
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .alt-sign-up__btn {
-    grid-row: 7 / 8;
-    display: flex;
-    justify-content: flex-start;
-    gap: 0.6rem;
-    align-items: center;
-    height: 75%;
-    width: 25%;
-    background-color: #4285F4;
-    border: 0.2rem solid #4285F4;
-    border-radius: 0.2rem;
+  grid-row: 7 / 8;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  align-items: center;
+  height: 75%;
+  width: 25%;
+  background-color: #4285f4;
+  border: 0.2rem solid #4285f4;
+  border-radius: 0.2rem;
 }
 
 .btn_img {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 0.2rem;
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.2rem;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn_txt {
-    background-color: transparent;
-    border: none;
-    font: var(--content-font);
-    font-size: 0.80rem;
-    color: #f2f2f2;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font: var(--content-font);
+  font-size: 0.8rem;
+  color: #f2f2f2;
+  cursor: pointer;
 }
 
 .login {
-    font: var(--content-font);
-    color: #f2f2f28a;
+  font: var(--content-font);
+  color: #f2f2f28a;
 }
 
 .login a {
-    color: #f2f2f2;
-    text-decoration: none;
+  color: #f2f2f2;
+  text-decoration: none;
 }
